@@ -1,0 +1,16 @@
+<h1>言葉のページ</h1>
+
+<div>
+  <%= form_with model: @keyword, url:keywords_path, method: :post,id: "form" do |f| %>
+    <%= f.text_area :text, class:"", id:"keyword_text", placeholder:"keyword" ,rows:"7" ,maxlength:"140" %>
+
+    <%= f.submit "登録する" ,class:"" ,id: "submit" %>
+  <% end %>
+</div>
+
+<% @keywords.each do |word| %>
+  <%= "#{word.text} / "%>
+<% end %>
+
+<%=link_to '言葉の編集',keyword_path(@keywords), class:"" %> 
+<%=link_to 'もどる', root_path, class:"" %> 

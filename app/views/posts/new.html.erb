@@ -1,0 +1,23 @@
+<h2>投稿する</h2>
+<%= form_with model: @post, url:posts_path, method: :post, local: true do |f| %>
+
+  <div>
+    <%= f.collection_select(:decoration_id, Decoration.all, :id, :name, {}, {class:"", id:"post_decoration_id"}) %>
+  </div> 
+  <div>
+    <% @random.each do |book| %>
+        <%= book.text %>
+    <% end %>
+  </div>
+  <div>
+      <%= f.text_area :text, class:"", id:"post_text", value:"お題：" ,rows:"7" ,maxlength:"140" %>  
+  </div> 
+  <%# 下部ボタン %>
+    <div class="">
+      <%= f.submit "投稿する" ,class:"" %>
+      <%=link_to 'もどる', root_path, class:"" %> 
+      <%=link_to 'お題変更', new_post_path , class:"" %> 
+    </div>
+  <%# /下部ボタン %>
+
+<% end %>
