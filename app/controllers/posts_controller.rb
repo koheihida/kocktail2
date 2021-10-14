@@ -8,7 +8,6 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @random = Keyword.order("RAND()").limit(2)
-    
   end
 
   def create
