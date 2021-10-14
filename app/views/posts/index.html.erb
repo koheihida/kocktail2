@@ -9,7 +9,7 @@
 <div>
 <h2>It's an order for you</h2>
     <% @random.each do |book| %>
-        <%=[ book.text ]%>
+        <%="[ #{book.text} ]"%>
     <% end %>
     <%=link_to 'お題変更', root_path , class:"" %>
 </div>
