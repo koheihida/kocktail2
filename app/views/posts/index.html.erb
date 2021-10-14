@@ -1,1 +1,22 @@
 <h1>最初のページ</h1>
+<%= link_to(new_post_path , class: '') do %>
+      <span class=''>投稿する</span>
+<% end %>
+<%= link_to( keywords_path , class: '') do %>
+      <span class=''>言葉登録する</span>
+<% end %>
+
+<div>
+<h2>It's an order for you</h2>
+    <% @random.each do |book| %>
+        <%=[ book.text ]%>
+    <% end %>
+    <%=link_to 'お題変更', root_path , class:"" %>
+</div>
+
+
+
+<% @posts.each do |post| %>
+  <%# <%= "#{user.nickname}"%>
+  <%= "・ #{post.text}"%>
+<% end %>

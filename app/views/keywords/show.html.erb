@@ -1,0 +1,11 @@
+<h1>言葉の編集</h1>
+  
+  <div>
+    <% @keywords.each do |word| %>
+       <%=link_to '言葉の削除', keyword_path(word.id),method: :delete, class:"" %>
+      <%= "#{word.text} / "%>
+    <% end %>
+  </div>
+
+
+<%=link_to 'もどる', root_path, class:"" %> 
