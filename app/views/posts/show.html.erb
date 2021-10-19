@@ -1,0 +1,14 @@
+<div class="tweet_show">
+  <div class= "tweet">
+    
+      <span class ="here"><%= "#{@post.text}"%><span>
+    
+  </div>
+
+    <div class ="tweet_btn">
+      <span class="fa fa-twitter"></span>
+      <%= link_to 'tweetする', "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank'%>
+    </div>
+
+    <%=link_to 'もどる', root_path, class:"" %> 
+</div>

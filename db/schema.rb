@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_13_121024) do
+ActiveRecord::Schema.define(version: 2021_10_14_085219) do
 
   create_table "keywords", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "text", null: false
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 2021_10_13_121024) do
     t.integer "user_id"
   end
 
+  create_table "titles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "keyword_id", null: false
+    t.integer "decoration_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["keyword_id"], name: "index_titles_on_keyword_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -41,4 +49,5 @@ ActiveRecord::Schema.define(version: 2021_10_13_121024) do
   end
 
   add_foreign_key "keywords", "users"
+  add_foreign_key "titles", "keywords"
 end

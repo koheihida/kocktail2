@@ -1,16 +1,27 @@
 <h2>投稿する</h2>
+<h2>投稿する</h2>
+<h2>投稿する</h2>
+<h2>投稿する</h2>
+<h2>投稿する</h2>
+<h2>投稿する</h2>
+<h2>投稿する</h2>
+<h2>投稿する</h2>
+<h2>投稿する</h2>
+
 <%= form_with model: @post, url:posts_path, method: :post, local: true do |f| %>
 
   <div>
     <%= f.collection_select(:decoration_id, Decoration.all, :id, :name, {}, {class:"", id:"post_decoration_id"}) %>
+    <button id="button">Add</button>
   </div> 
   <div>
     <% @random.each do |book| %>
         <%= book.text %>
     <% end %>
+    <%= titles %>
   </div>
   <div>
-      <%= f.text_area :text, class:"", id:"post_text", value:"お題：" ,rows:"7" ,maxlength:"140" %>  
+      <%= f.text_area :text, class:"", id:"post_text", value:"お題：#{@add[0]} #{@add[1]} /" ,rows:"7" ,maxlength:"140" %>  
   </div> 
   <%# 下部ボタン %>
     <div class="">
@@ -19,5 +30,13 @@
       <%=link_to 'お題変更', new_post_path , class:"" %> 
     </div>
   <%# /下部ボタン %>
-
+  <script type=”text/JavaScript” src=”js/main.js”></script>
 <% end %>
+
+<input type="text">
+  <button>Add</button>
+
+  <ul>
+  </ul>
+<%# <%= javascript_include_tag 'main' %> 
+<script src="app/javascript/main.js"></script> 

@@ -55,3 +55,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pry-rails'
 gem 'devise'
 gem 'active_hash'
+gem 'bootstrap', '~> 5.1.0'
+gem 'jquery-rails'
+gem 'kaminari'

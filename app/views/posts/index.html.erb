@@ -1,22 +1,64 @@
-<h1>最初のページ</h1>
-<%= link_to(new_post_path , class: '') do %>
-      <span class=''>投稿する</span>
-<% end %>
-<%= link_to( keywords_path , class: '') do %>
-      <span class=''>言葉登録する</span>
-<% end %>
+<div class="top-wrapper">
+  <div class= "glass1">
+   
+     <marquee direction="up"  scrollamount="2" truespeed>
+      <h1>既存の言葉を、</h1><Br>
+      <h1>ひっくり返せ　</h1></marquee>
+    
+  </div>
+  <div class ="glass"> 
+    <h1>考える術</h1>
+    
+  </div>
 
-<div>
-  <h2>It's an order for you</h2>
-    <% @random.each do |book| %>
-      <%="[ #{book.text} ]"%>
-    <% end %>
-    <%=link_to 'お題変更', root_path , class:"" %>
+  <div class="glass2">
+    <h1>商品名：KotobaOCKTAIL</h1>
+    <h5>(読み方：カクテル）<h5>
+  </div>
+<div class ="about">
+  <h4 class="about_a">How About</h4>
+  <p>このアプリケーションを考案したきっかけは映画「僕たちは世界を変えることができない。」を見た時に思いつきました。
+      こちらの映画は世界を変えることは大きすぎてできないけど目標のカンボジアに学校をつくることができると自分の見える世界が変わり未来に向かっていくストーリーです。
+  </p>
+  <p>コロナ禍を迎え、今までの当然が当然ではなくなり常識が覆される事(ex:リモートワークの常習化、飲食店の20時までの営 業、事ある度にアルコール消毒など)も頻繁に起きるようになりました。
+  </p>
+  <p>私の勤めていた飲食業界のもれなくコロナ禍のダメージを受けた業界の一つです。
+  「コロナ禍を変えたい」や「飲食業界を変えたい」はあまりにも大きな課題過ぎますし、変えるための術も思いついていません・・・。</p>
+  <p>そこで上記の映画のように世界は変わらないけど、自分の視野(発想力)を変えれるようなアプリケーションを作成しようとかんがえました。</p>
+  <p>既にある既存の言葉と言葉で誕生したお題に効能や意味・役割を与えることを習慣できるアプリケーションです。
+  「カメラ」×「携帯電話」＝「写メ」のようにかなり離れているものがか繋がることで人々の生活が、ライフスタイルが変わることもあるのです。</p>
+  <p>既存のリキュールやスピリッツを様々な組み合わせで世界中の大人を魅了しているカクテルのように、無駄な意味や役割も積み重なることによってユーザーの視野が、世界が変わるような表現ができますように。
+  </p>
+
+
+      <div>
+        <%= link_to( keywords_path , class: '') do %>
+              <span class=''>言葉を登録する</span>
+        <% end %>
+
+        <div>
+          <%= form_with model: @post, url:posts_path, method: :post, local: true do |f| %>
+            <h2>It's an order for you</h2>
+            <div>
+              <%= f.collection_select(:decoration_id, Decoration.all, :id, :name, {}, {class:"", id:"post_decoration_id"}) %>
+            </div> 
+              <% @random.each do |book| %>
+                <%="[ #{book.text} ]"%>
+              <% end %>
+              <%= link_to(new_post_path , class: '') do %>
+                <span class=''>投稿する</span>
+              <% end %>
+              <%=link_to 'お題変更', root_path , class:"" %>
+          <% end %>
+        </div>
+      </div>
+
+      <div>
+        <% @posts.each do |post| %>
+          <li>
+            <ul><%= link_to "● #{post.text}", post_path(post) %></ul>
+          </li>
+        <% end %>
+        <%= paginate @posts %>
+      </div>  
 </div>
-
-
-
-<% @posts.each do |post| %>
-  <%# <%= "#{user.nickname}"%>
-  <%= "・ #{post.text}"%>
-<% end %>
