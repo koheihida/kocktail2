@@ -59,3 +59,6 @@ gem 'bootstrap', '~> 5.1.0'
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
+gem 'omniauth-twitter'
+gem "omniauth-rails_csrf_protection"
+gem 'omniauth', '~>1.9.1'
