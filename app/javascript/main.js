@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 // {
 //   document.querySelector('button').addEventListener('click',() => {
@@ -10,19 +10,19 @@
 // }
 
 
-  window.addEventListener('load', function(){
+  // window.addEventListener('load', function(){
 
 
-  document.querySelector('button').addEventListener('click', () => {
-    console.log("teso")
-    const li = document.createElement('li');
-    const text = document.querySelector('input');
-    li.textContent = text.value;
-    document.querySelector('ul').appendChild(li);
+  // document.querySelector('button').addEventListener('click', () => {
+  //   console.log("teso")
+  //   const li = document.createElement('li');
+  //   const text = document.querySelector('input');
+  //   li.textContent = text.value;
+  //   document.querySelector('ul').appendChild(li);
 
-    text.value = '';
-    text.focus();
-  });
+  //   text.value = '';
+  //   text.focus();
+  // });
 
     
     //セレクトボックスが切り替わったら発動
@@ -63,4 +63,4 @@
       // //選択したvalue値をp要素に出力
       // ('post_text').text(val);
    
-});
+// });

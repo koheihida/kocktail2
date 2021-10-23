@@ -1,16 +1,36 @@
-<h1>言葉のページ</h1>
 
-<div>
-  <%= form_with model: @keyword, url:keywords_path, method: :post,id: "form" do |f| %>
-    <%= f.text_area :text, class:"", id:"keyword_text", placeholder:"keyword" ,rows:"7" ,maxlength:"140" %>
+<div class= "keyword_parent">
+<div class="sp3"></div>
+<marquee direction="doown"><h1 class="line_line2">　　　　　　　</h1></marquee>
+  <div class="keyword_childe">
+  <div class="sp3"></div>
+    <div class = "btnd btnd--shadow">
+      <%= form_with model: @keyword, url:keywords_path, method: :post,id: "form" do |f| %>
+      <div class="keywordchild">
+        <%= f.submit "登録する" ,class:"btnd btnd--shadow aaaa" ,id: "submit" %>
+        <div class="sp3"></div>
+        <div class="sp3"></div>
+      </div> 
+       
+        <%= f.text_area :text, class:"textpostin", id:"keyword_text", placeholder:"　　登録済みの言葉は登録できません!！" ,size: "40x5",rows:"7" ,maxlength:"140" %>
+      <% end %>
+    </div>
+  </div>  
+  <div class="sp3"></div>
+  <marquee direction="right"><h1 class="line_line">　　　　　　　</h1></marquee>
+    <div class="keyword_childe">
+      <div class= "keyword_list">
+        <% @keywords.each do |word| %>
+          <%= "#{word.text} / "%>
+        <% end %>
+        <div class = "page_list">
+          <%= paginate @keywords %>
+        </div> 
+      </div>
+    </div>
 
-    <%= f.submit "登録する" ,class:"" ,id: "submit" %>
-  <% end %>
+      <div class = "keyword_root">
+        <%=link_to '言葉の編集',keyword_path(@keywords), class:" btnd btnd--shadow",id: "submit" %> 
+        <%=link_to 'home', root_path, class:" btnd btnd--shadow",id: "submit" %> 
+      </div>  
 </div>
-
-<% @keywords.each do |word| %>
-  <%= "#{word.text} / "%>
-<% end %>
-
-<%=link_to '言葉の編集',keyword_path(@keywords), class:"" %> 
-<%=link_to 'もどる', root_path, class:"" %> 

@@ -1,8 +1,13 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all.page(params[:page]).per(10)
+    @posts = Post.all.page(params[:page]).per(10).order("created_at DESC")
     @random = Keyword.order("RAND()").limit(2)
+  end
+
+  def search
+    @posts = Post.search(params[:keyword])
+    
   end
 
   def new
@@ -11,10 +16,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    
     @post = Post.create(post_params)
     if @post.save
-      redirect_to root_path
+      redirect_to post_path(@post.id)
     end
   end
 
@@ -35,6 +39,4 @@ class PostsController < ApplicationController
       book.text
     end
   end
-
-
 end

@@ -1,64 +1,220 @@
 <div class="top-wrapper">
+
+  <div class= "indextop">
+    <h1 class="line_line">　　　　　　　</h1>
+  </div>
   <div class= "glass1">
-   
-     <marquee direction="up"  scrollamount="2" truespeed>
-      <h1>既存の言葉を、</h1><Br>
-      <h1>ひっくり返せ　</h1></marquee>
+    <h1>
+      <span
+      class="txt-rotate"
+      data-period="2000"
+      data-rotate='[ "言葉を新たに創造せよ", "言葉の概念をひっくり返せ", "役割から考える新しい言葉", "考える術", "表現を楽しめ!!" ,"無駄づくり"]'></span>
+    </h1>
+<script>
+var TxtRotate = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtRotate.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+  var that = this;
+  var delta = 300 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+};
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('txt-rotate');
+  for (var i=0; i<elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-rotate');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+  document.body.appendChild(css);
+};
+</script>
+  <div class ="sp5"></div> 
     
   </div>
+  <div class="indexsp">
+    <h1 class="line_line">　　　　　　　</h1>
+  </div>
   <div class ="glass"> 
-    <h1>考える術</h1>
+    <h1 class="head_test">考える術</h1>
     
+  </div>
+  <div > 
+    <marquee direction="doown"><h1 class="line_line2">　　　　　　　</h1></marquee>
   </div>
 
   <div class="glass2">
-    <h1>商品名：KotobaOCKTAIL</h1>
+   
+        <h1>商品名：
+      <span
+      class="txt-rotate"
+      data-period="2000"
+      data-rotate='[ "KotobaOCKTAIL"]'></span>
+    </h1>
+<script>
+var TxtRotate = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtRotate.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+  var that = this;
+  var delta = 300 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+};
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('txt-rotate');
+  for (var i=0; i<elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-rotate');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+  document.body.appendChild(css);
+};
+</script>
+
     <h5>(読み方：カクテル）<h5>
   </div>
-<div class ="about">
-  <h4 class="about_a">How About</h4>
-  <p>このアプリケーションを考案したきっかけは映画「僕たちは世界を変えることができない。」を見た時に思いつきました。
-      こちらの映画は世界を変えることは大きすぎてできないけど目標のカンボジアに学校をつくることができると自分の見える世界が変わり未来に向かっていくストーリーです。
-  </p>
-  <p>コロナ禍を迎え、今までの当然が当然ではなくなり常識が覆される事(ex:リモートワークの常習化、飲食店の20時までの営 業、事ある度にアルコール消毒など)も頻繁に起きるようになりました。
-  </p>
-  <p>私の勤めていた飲食業界のもれなくコロナ禍のダメージを受けた業界の一つです。
-  「コロナ禍を変えたい」や「飲食業界を変えたい」はあまりにも大きな課題過ぎますし、変えるための術も思いついていません・・・。</p>
-  <p>そこで上記の映画のように世界は変わらないけど、自分の視野(発想力)を変えれるようなアプリケーションを作成しようとかんがえました。</p>
-  <p>既にある既存の言葉と言葉で誕生したお題に効能や意味・役割を与えることを習慣できるアプリケーションです。
-  「カメラ」×「携帯電話」＝「写メ」のようにかなり離れているものがか繋がることで人々の生活が、ライフスタイルが変わることもあるのです。</p>
-  <p>既存のリキュールやスピリッツを様々な組み合わせで世界中の大人を魅了しているカクテルのように、無駄な意味や役割も積み重なることによってユーザーの視野が、世界が変わるような表現ができますように。
-  </p>
-
-
-      <div>
-        <%= link_to( keywords_path , class: '') do %>
-              <span class=''>言葉を登録する</span>
-        <% end %>
-
-        <div>
-          <%= form_with model: @post, url:posts_path, method: :post, local: true do |f| %>
-            <h2>It's an order for you</h2>
-            <div>
-              <%= f.collection_select(:decoration_id, Decoration.all, :id, :name, {}, {class:"", id:"post_decoration_id"}) %>
-            </div> 
-              <% @random.each do |book| %>
-                <%="[ #{book.text} ]"%>
-              <% end %>
-              <%= link_to(new_post_path , class: '') do %>
-                <span class=''>投稿する</span>
-              <% end %>
-              <%=link_to 'お題変更', root_path , class:"" %>
-          <% end %>
-        </div>
+    <div>
+        <marquee direction="right"><h1 class="line_line">　　　　　　　</h1></marquee>
+      </div>
+  
+      <div class ="about">
+        <h4 class="about_a">"How About"</h4>
+        <p>このアプリケーションを考案したきっかけは映画「僕たちは世界を変えることができない。」を見た時に思いつきました。
+            こちらの映画は世界を変えることは大きすぎてできないけど目標のカンボジアに学校をつくることができると自分の見える世界が変わり未来に向かっていくストーリーです。
+        </p>
+        <p>コロナ禍を迎え、今までの当然が当然ではなくなり常識が覆される事(ex:リモートワークの常習化、飲食店の20時までの営 業、事ある度にアルコール消毒など)も頻繁に起きるようになりました。
+        </p>
+        <p>私の勤めていた飲食業界のもれなくコロナ禍のダメージを受けた業界の一つです。
+        「コロナ禍を変えたい」や「飲食業界を変えたい」はあまりにも大きな課題過ぎますし、変えるための術も思いついていません・・・。</p>
+        <p>そこで上記の映画のように世界は変わらないけど、自分の視野(発想力)を変えれるようなアプリケーションを作成しようとかんがえました。</p>
+        <p>既にある既存の言葉と言葉で誕生したお題に効能や意味・役割を与えることを習慣できるアプリケーションです。
+        「カメラ」×「携帯電話」＝「写メ」のようにかなり離れているものがか繋がることで人々の生活が、ライフスタイルが変わることもあるのです。</p>
+        <p>既存のリキュールやスピリッツを様々な組み合わせで世界中の大人を魅了しているカクテルのように、無駄な意味や役割も積み重なることによってユーザーの視野が、世界が変わるような表現ができますように。
+        </p>
       </div>
 
-      <div>
+      <div> 
+        <marquee direction="doown"><h1 class="line_line2">　　　　　　　</h1></marquee>
+      </div>
+      <div class="how">
+        <span class="about"><h4>"How to use"</h4></span>
+        <p>既に登録されている単語がランダム2つ選ばれお題が決まります。</p>
+        <p>ランダムで組み合わされた新しい"造語"の役割を考えて投稿してください</p>
+        <p>ありえないと思う発想から今使われているモノで世の中は埋もれています</p>
+        <p>ここから生まれたアイディアが誰かの人生を変えるキッカケになるかもしれません</p>
+     </div>
+      <div class="keyord_rootmain">
+          <div class="keyword_root">
+            <%= link_to( keywords_path , class: 'btnda btnd--shadowa') do %>
+                  <span class=''>言葉を登録する</span>
+            <% end %>
+          </div>
+
+          <div class="keyword_root" >
+            <%= form_with model: @post, url:posts_path, method: :post, local: true do |f| %>
+              <%= link_to(new_post_path , class: 'btnda btnd--shadowa') do %>
+                <span class=''>投稿する</span>
+              <% end %>
+            <% end %>
+          </div>
+      </div>
+      <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
+        <%= form.text_field :keyword, placeholder: "　　みんなの無駄を検索みよう", class: "textpostin textpostina" ,size: "30x10" %>
+        <%= form.submit "search", class: "btnda btnd--shadowa" %>
+      <% end %>
+
+       <div> 
+        <marquee direction="right"><h1 class="line_line2">　　　　　　　</h1></marquee>
+      </div>
+    <div class ="list_list">
+      <div class = "list" >
         <% @posts.each do |post| %>
           <li>
-            <ul><%= link_to "● #{post.text}", post_path(post) %></ul>
+            <ul><%= link_to "● #{post.text}", post_path(post), class: "listul" %></ul>
           </li>
         <% end %>
-        <%= paginate @posts %>
-      </div>  
-</div>
+        <div class = "page">
+          <%= paginate @posts %>
+        </div>  
+      </div> 
+    </div>   
+
+    

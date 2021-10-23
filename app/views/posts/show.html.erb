@@ -1,14 +1,23 @@
 <div class="tweet_show">
+
+      <div class="sp4">
+          <marquee direction="right"><h1 class="line_line">　　　　　　　</h1></marquee>
+      </div>
   <div class= "tweet">
     
       <span class ="here"><%= "#{@post.text}"%><span>
     
   </div>
-
-    <div class ="tweet_btn">
-      <span class="fa fa-twitter"></span>
-      <%= link_to 'tweetする', "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank'%>
-    </div>
-
-    <%=link_to 'もどる', root_path, class:"" %> 
+      
+          <marquee direction="left"><h1 class="line_line">　　　　　　　</h1></marquee>
+    
+    <div class ="show_footer"> 
+      <div class =" btnd btnd--shadow showfooter">
+        <span class="fa fa-twitter btnd btnd--shadow">
+        <%= link_to '　tweetする', "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank',class: "tweeta"%></span>
+      </div>
+      <div class ="btnd btnd--shadow showfooter showfootera">
+        <%=link_to 'home', root_path, class:"btnd btnd--shadow" %>
+      </div> 
+    </div> 
 </div>
