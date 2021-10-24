@@ -1,52 +1,71 @@
-<h2>Sign up</h2>
-
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :nickname %><br />
-    <%= f.text_field :nickname, autofocus: true, autocomplete: "email" %>
+<div class="top-wrapper">
+  <div class ="sp5"></div>
+  <div > 
+    <marquee direction="doown"><h1 class="line_line2">　　　　　　　</h1></marquee>
   </div>
+  <h2>Sign up</h2>
+    <div class ="textcenter">
+      <div class =" btnd btnd--shadow showfooter textcenter">
+            <span class="fa fa-twitter btnd btnd--shadow textlink">
+              <%= link_to "Sign up for Twitter", user_twitter_omniauth_authorize_path, method: :post%></span>
+        </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <div class ="signup">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+
+          <div class="field">
+            <%= f.label :nickname %><br />
+            <div class ="textcenter">
+             <%= f.text_field :nickname, autofocus: true, autocomplete: "email" ,class: "textpostin textpostina",size: "30x10"%>
+            </div> 
+          </div>
+
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "textpostin textpostina" ,size: "30x10"%>
+          </div>
+
+          <div class="field">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "new-password" ,class: "textpostin textpostina",size: "30x10"%>
+          </div>
+
+          <div class="field">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "textpostin textpostina",size: "30x10" %>
+          </div>
+
+          <div class="actions">
+            
+          </div>
+          
+            <%if @sns_id.present? %>
+              <%= hidden_field_tag :sns_auth, true %>
+            <% else %>
+              <div class="field">
+                <%= f.label :password %>
+                <% @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <br />
+                <%= f.password_field :password, autocomplete: "new-password",class: "textpostin textpostina" ,size: "30x10"%>
+              </div>
+
+              <div class="field">
+                <%= f.label :password_confirmation %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "textpostin textpostina",size: "30x10" %>
+              </div>
+            <% end %>
+        <div >
+    </div>    
+
+    <marquee direction="right"><h1 class="line_line2">　　　　　　　</h1></marquee>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-    <%= link_to "Twitterで登録", user_twitter_omniauth_authorize_path, method: :post%>
-    <%if @sns_id.present? %>
-      <%= hidden_field_tag :sns_auth, true %>
-    <% else %>
-      <div class="field">
-        <%= f.label :password %>
-        <% @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <br />
-        <%= f.password_field :password, autocomplete: "new-password" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-      </div>
+          <%= f.submit "Sign up" , class: "btnda btnd--shadowa"%>
     <% end %>
-<% end %>
-
-<%= render "devise/shared/links" %>
+    <%# <%= render "devise/shared/links" , class: "btnda btnd--shadowa"%> 
+  </div>  
+</div>

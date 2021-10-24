@@ -714,3 +714,26 @@ button.btn .keyword_root{
   width: 70%;
   font-size: 25px;
 }
+
+/* signup */
+.signup{
+  text-align: center;
+}
+.textcenter{
+  margin: auto;
+  padding: auto;
+  text-align: center;
+}
+.textcenter input{
+  margin:  10px auto 10px auto;
+}
+.textlink span{
+  margin:10px auto 10px auto;
+}
+
+.textlink a{
+  text-decoration: none;
+}
+.textlink a:hover{
+  color: #770000;
+}
