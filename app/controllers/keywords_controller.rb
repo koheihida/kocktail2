@@ -16,7 +16,7 @@ class KeywordsController < ApplicationController
       if @keyword.save
         redirect_to  keywords_path
       else
-        render :new  
+        render :show  
       end 
     end
 

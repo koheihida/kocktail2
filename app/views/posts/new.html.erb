@@ -110,11 +110,6 @@
       <h5>装飾語を付けて</h5> 
       <h5>考えてみよう</h5>
       <%= form_with model: @post, url:posts_path, method: :post, local: true do |f| %>
-        <%# <div class= "add">
-          <h5>　お題に装飾して表現を広げよう!!　</h5>  
-          <%= f.collection_select(:decoration_id, Decoration.all, :id, :name, {}, {class:"", id:"post_decoration_id"}) %>
-          <%# <button id="button">Add</button> %>
-        <%# </div>  %>
          <div class="sp3">
         </div>
           <div class="btnd btnd--shadow">

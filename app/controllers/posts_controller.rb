@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = Post.new(post_params)
     @random = Keyword.order("RAND()").limit(2)
   end
 
