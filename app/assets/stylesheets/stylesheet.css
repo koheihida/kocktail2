@@ -319,10 +319,6 @@ li{
   border-radius: 5px;
   padding:5px 10px;
 }
-.list li{
- /* width:100px; border:1px solid #ccc; background-color:#ddeeff;
- word-wrap:break-all; */
-}
 
 .list a{
   color: maroon;
@@ -383,9 +379,11 @@ li{
   font-size: 40px;
 }
 .tweet{
-  margin-top: 50px;
-  margin-bottom: 50px;
-  font-size: 80px;
+  
+  margin: 50px auto;
+  font-size: 50px;
+  width: 70%;
+  text-align: center;
 }
 
 .tweet_btn{
