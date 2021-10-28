@@ -50,6 +50,16 @@ PW:aaa111
 ・アウトプットを気軽にする練習をする           
 
 ## 実装した機能についての画像やGIFおよびその説明
+### トップページ
+https://i.gyazo.com/b12a7fe1b7caa91c48cb74735ec51cf2.gif
+### Twitter認証
+https://i.gyazo.com/bfb97143d1c721a1e506dc93903fa64f.gif
+### 言葉登録ページ
+https://i.gyazo.com/18e524c84b278d328076c1323775d390.gif
+### ランダムお題ページ(上記で登録した言葉が表示されます)
+https://i.gyazo.com/902e008f48929a412e1131e07ffd2e55.gif
+### 投稿内容 Twitterにシェアする
+https://i.gyazo.com/a4b5274b7b45fdb7a4f92a6064b128ca.gif
 
 
 ## user テーブル
