@@ -2,6 +2,8 @@
 
 現在修正中です。
 
+[![Image from Gyazo](https://i.gyazo.com/c7c007f1bdcc1c5a76a2c6007adda08d.png)](https://gyazo.com/c7c007f1bdcc1c5a76a2c6007adda08d)
+
 ## 作成動機
 テックキャンプ通学以前から決めてのは読んだことのある本を具現化するコトでした。
 そこで最近読んだ藤原麻里菜さん著書の「考える術」という本をアプリケーションにすることをテーマに取り組みました。
@@ -50,16 +52,22 @@ PW:aaa111
 ・アウトプットを気軽にする練習をする           
 
 ## 実装した機能についての画像やGIFおよびその説明
-### トップページ
-https://i.gyazo.com/b12a7fe1b7caa91c48cb74735ec51cf2.gif
+### トップページ(メインjQuery)
+[![Image from Gyazo](https://i.gyazo.com/2f1493b082798a46f8b5c502496ca52c.gif)](https://gyazo.com/2f1493b082798a46f8b5c502496ca52c)
+### indexページ全体
+[![Image from Gyazo](https://i.gyazo.com/d77aa278fbf7aa7368859c56497beabb.gif)](https://gyazo.com/d77aa278fbf7aa7368859c56497beabb)
 ### Twitter認証
-https://i.gyazo.com/bfb97143d1c721a1e506dc93903fa64f.gif
+[![Image from Gyazo](https://i.gyazo.com/c5737c1a3ffd7ae72f3a8dd07fd5c6b3.gif)](https://gyazo.com/c5737c1a3ffd7ae72f3a8dd07fd5c6b3)
 ### 言葉登録ページ
-https://i.gyazo.com/18e524c84b278d328076c1323775d390.gif
-### ランダムお題ページ(上記で登録した言葉が表示されます)
-https://i.gyazo.com/902e008f48929a412e1131e07ffd2e55.gif
+[![Image from Gyazo](https://i.gyazo.com/487a32025aa2273663c9014b9e6ed96c.gif)](https://gyazo.com/487a32025aa2273663c9014b9e6ed96c)
+### ランダムお題ページ(上記で登録した言葉がランダムで表示されます)
+[![Image from Gyazo](https://i.gyazo.com/0c2ea761da0635128e64da9a7441412e.gif)](https://gyazo.com/0c2ea761da0635128e64da9a7441412e)
+### 上記のお題はtext_areaに自動挿入されます
+[![Image from Gyazo](https://i.gyazo.com/7b4bc0ee608cbc898d151c48e64f27fb.gif)](https://gyazo.com/7b4bc0ee608cbc898d151c48e64f27fb)
+### タイマー機能
+[![Image from Gyazo](https://i.gyazo.com/b5cf9cc5c096764fcef5fb9e858e708b.gif)](https://gyazo.com/b5cf9cc5c096764fcef5fb9e858e708b)
 ### 投稿内容 Twitterにシェアする
-https://i.gyazo.com/a4b5274b7b45fdb7a4f92a6064b128ca.gif
+[![Image from Gyazo](https://i.gyazo.com/a04c53d105c71daecbb96dc6a3116875.gif)](https://gyazo.com/a04c53d105c71daecbb96dc6a3116875)
 
 
 ## user テーブル
@@ -73,9 +81,9 @@ https://i.gyazo.com/a4b5274b7b45fdb7a4f92a6064b128ca.gif
 
 ### Association
 - has_many :post
-- has_many :kotoba
+- has_many :keyword
 
-## kotoba テーブル
+## keyword テーブル
 |Column              |  Type        | Options                       |
 |:-------------------|-------------:|:-----------------------------:|
 | word               | string       | null: false                   |
@@ -85,7 +93,7 @@ https://i.gyazo.com/a4b5274b7b45fdb7a4f92a6064b128ca.gif
 | user               | references   | null: false, foreign_key: true|
 
 ### Association
-- has_many :post, through: :kotoba_post
+- has_many :post, through: :keyword_post
 - belongs_to :user
 
 
@@ -98,17 +106,17 @@ https://i.gyazo.com/a4b5274b7b45fdb7a4f92a6064b128ca.gif
 | user               | references   | null: false, foreign_key: true|
 
 ### Association
-- has_many :kotoba, through: :kotoba_post
+- has_many :keyword, through: :keyword_post
 - belongs_to :user
 
 
-## kotoba_post テーブル
+## keyword_post テーブル
 |Column              |  Type        | Options                       |
 |:-------------------|-------------:|:-----------------------------:|
-| kotoba_1           | references   | null: false, foreign_key: true|
-| kotoba_2           | references   | null: false, foreign_key: true|
+| keyword_1           | references   | null: false, foreign_key: true|
+| keyword_2           | references   | null: false, foreign_key: true|
 | post               | references   | null: false, foreign_key: true|
 
 ### Association
-- belongs_to :kotoba
+- belongs_to :keyword
 - belongs_to :post
