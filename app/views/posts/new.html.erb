@@ -103,29 +103,27 @@
   </div>
 
   <marquee direction="right"><h1 class="line_line">　　　　　　　</h1></marquee>
-  <div class="expressparent">
-    <div class = "express">
-      <h2>Let's express it!!!</h2> 
-      <h5>困った時は下記の</h5>
-      <h5>装飾語を付けて</h5> 
-      <h5>考えてみよう</h5>
-      <%= form_with model: @post, url:posts_path, method: :post, local: true do |f| %>
-         <div class="sp3">
+
+  <%= form_with model: @post, url:posts_path, method: :post, local: true do |f| %>
+    <div class="expressparent">
+      <div class = "express">
+        <h2>Let's express it!!!</h2> 
+        <h5>困った時は下記の</h5>
+        <h5>装飾語を付けて</h5> 
+        <h5>考えてみよう</h5>
+        <div class="sp3">
         </div>
-          <div class="btnd btnd--shadow">
-            <%= f.submit "投稿する" ,class:"btnd btnd--shadow" %>
-            <%=link_to 'home', root_path, class:"btnd btnd--shadow" %> 
-          </div>
-    </div> 
-    
-        <div class="textpost" >
-            <%= f.text_area :text, class:"textpostin", id:"post_text", value:"New word：#{@add[0]} #{@add[1]} /meaning :" ,rows:"7" ,maxlength:"140",size: "40x8" %>  
-        </div> 
-      <% end %>
+        <div class="btnd btnd--shadow">
+          <%= f.submit "投稿する" ,class:"btnd btnd--shadow" %>
+          <%=link_to 'home', root_path, class:"btnd btnd--shadow" %> 
+        </div>
+      </div>
+      <div class="textpost" >
+        <%= f.text_area :text, class:"textpostin", id:"post_text", value:"New word：#{@add[0]} #{@add[1]} /meaning :" ,rows:"7" ,maxlength:"140",size: "40x8" %>  
+      </div> 
     </div>
-  <div>    
-    <marquee direction="doown"><h1 class="line_line">　　　　　　　</h1></marquee>     
-</div>
+  <% end %>
+  <marquee direction="doown"><h1 class="line_line">　　　　　　　</h1></marquee>     
  <h1>装飾語</h1>
  <h1>
   <span

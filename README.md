@@ -1,7 +1,6 @@
 # README
 
 現在修正中です。
-
 [![Image from Gyazo](https://i.gyazo.com/c7c007f1bdcc1c5a76a2c6007adda08d.png)](https://gyazo.com/c7c007f1bdcc1c5a76a2c6007adda08d)
 
 ## 作成動機
@@ -52,11 +51,11 @@ PW:aaa111
 ・アウトプットを気軽にする練習をする           
 
 ## 実装した機能についての画像やGIFおよびその説明
-### トップページ(メインjQuery)
+-### トップページ(メインjQuery)
 [![Image from Gyazo](https://i.gyazo.com/2f1493b082798a46f8b5c502496ca52c.gif)](https://gyazo.com/2f1493b082798a46f8b5c502496ca52c)
 ### indexページ全体
 [![Image from Gyazo](https://i.gyazo.com/d77aa278fbf7aa7368859c56497beabb.gif)](https://gyazo.com/d77aa278fbf7aa7368859c56497beabb)
-### Twitter認証
+-### Twitter認証
 [![Image from Gyazo](https://i.gyazo.com/c5737c1a3ffd7ae72f3a8dd07fd5c6b3.gif)](https://gyazo.com/c5737c1a3ffd7ae72f3a8dd07fd5c6b3)
 ### 言葉登録ページ
 [![Image from Gyazo](https://i.gyazo.com/487a32025aa2273663c9014b9e6ed96c.gif)](https://gyazo.com/487a32025aa2273663c9014b9e6ed96c)
@@ -83,7 +82,7 @@ PW:aaa111
 - has_many :post
 - has_many :keyword
 
-## keyword テーブル
+## kotoba テーブル
 |Column              |  Type        | Options                       |
 |:-------------------|-------------:|:-----------------------------:|
 | word               | string       | null: false                   |
@@ -102,7 +101,7 @@ PW:aaa111
 |Column              |  Type        | Options                       |
 |:-------------------|-------------:|:-----------------------------:|
 | text               | string       | null: false                   |
-| kotoba_post        | references   | null: false, foreign_key: true|
+| keyword_post       | references   | null: false, foreign_key: true|
 | user               | references   | null: false, foreign_key: true|
 
 ### Association
@@ -113,8 +112,8 @@ PW:aaa111
 ## keyword_post テーブル
 |Column              |  Type        | Options                       |
 |:-------------------|-------------:|:-----------------------------:|
-| keyword_1           | references   | null: false, foreign_key: true|
-| keyword_2           | references   | null: false, foreign_key: true|
+| keyword_1          | references   | null: false, foreign_key: true|
+| keyword_2          | references   | null: false, foreign_key: true|
 | post               | references   | null: false, foreign_key: true|
 
 ### Association
