@@ -1,9 +1,10 @@
 <div class="new_post">
     <%# 投稿機能 %>
     
-      <div class="sp4">
-          <marquee direction="right"><h1 class="line_line">　　　　　　　</h1></marquee>
-      </div>
+      <div class="sp4"></div>
+      <div class= "this"> 
+        <marquee direction="right"><h5 class="line_line2">　　　　　　　</h1></marquee>
+       </div>
     <div class="post_tweet">
         <div class="yourorder">
               <h3>New word is ・・・</h3>
@@ -102,8 +103,6 @@
                 <script type=”text/JavaScript” src=”js/main.js”></script>
   </div>
 
-  <marquee direction="right"><h1 class="line_line">　　　　　　　</h1></marquee>
-
   <%= form_with model: @post, url:posts_path, method: :post, local: true do |f| %>
     <div class="expressparent">
       <div class = "express">
@@ -119,11 +118,13 @@
         </div>
       </div>
       <div class="textpost" >
-        <%= f.text_area :text, class:"textpostin", id:"post_text", value:"New word：#{@add[0]} #{@add[1]} /meaning :" ,rows:"7" ,maxlength:"140",size: "40x8" %>  
+        <%= f.text_area :text, class:"textpostin textpostin_post", id:"post_text", value:"New word：#{@add[0]} #{@add[1]} /meaning :" ,rows:"7" ,maxlength:"140",size: "40x8" %>  
       </div> 
     </div>
   <% end %>
-  <marquee direction="doown"><h1 class="line_line">　　　　　　　</h1></marquee>     
+  <div class= "this"> 
+    <marquee direction="right"><h5 class="line_line2">　　　　　　　</h1></marquee>
+  </div>   
  <h1>装飾語</h1>
  <h1>
   <span

@@ -1,10 +1,111 @@
-/* input[type="submit" i] {
-  padding: 0;
-  border: none;
-  border-radius: 0;
-  outline: none;
-  background: none;
-} */
+
+/* @media (max-width:1000px){
+  * {font-size: 30px; }  
+  } */
+@media (max-width:670px) {
+  /* * {background-size: 100%;}  */
+  /* header{
+    width: 20px;
+  }
+  .about{
+    width: 20px;
+  }
+  
+  * {width:80% ; }  */
+  /* .btnda span{ 
+    width: 30%;
+    font-size: 10px;
+    padding: auto;
+    margin: auto; */
+  /* } */
+  .textpostin_key{
+    width: 70%;
+    height: 80px;
+    
+  }
+  .txt-rotate{
+    margin-left: 0;
+  }
+  .yourorder span{
+    font-size: 15px;
+  }
+  .yourorderlist{
+    width: 100px;
+    font-size: 20px;
+  }
+  .timemain{
+    width: 10px;
+  }
+  .count_time{
+    height: 300px;
+  }
+  .express{
+    width: 200px;
+    font-size: 20px;
+  }
+  .textpostin_post{
+    width: 150px;
+    height: 400px;
+  }
+
+  .space input{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+  }
+  .btnda {
+    font-size: 1px;
+    color: #F5DEB3;
+    background-color: maroon;
+    padding: 7px;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 0px;
+    margin: 0;
+  }
+  .btnda span{
+    padding: 0;
+    margin: 0;
+  }
+
+  .keyword_root{
+    margin: auto;
+
+  }
+  .glass1 h1{
+    
+    font-size: 40px;
+  }
+
+  h1 span{
+    font-size: 35px;
+  }
+
+  .keyword_childe{
+    height: 50px;
+    
+  }
+  .keyword_list{
+    width: 80%;
+    height: 200px;
+    font-size: 10px;
+    margin-right: 0;
+    text-align: center;
+  }
+  .word_edit_list p{
+    font-size: 40px;
+    width: 100%;
+  }
+  /* .glass1 h1{
+    margin-left: 30px;
+  } */
+
+  .timer.timer{
+    font-size: 30px;
+  }
+  
+    }
+
 
 
 header{
@@ -12,11 +113,13 @@ header{
   top:0;
   z-index:10;
   color:maroon;
-}
+  width: 100%;
+}  
 
 body {
   margin: 0;
   font-family: "Hiragino Kaku Gothic ProN";
+  width: 100%;
 }
 
 a {
@@ -29,7 +132,7 @@ button{
 }
 
 .container {
-  width: 1170px;
+  width: 100%;
   padding: 0 15px;
   margin: 0 auto;
 }
@@ -79,7 +182,7 @@ a.btnd {
   padding:  7px;
   border-radius: 5px;
   text-decoration: none;
-  padding: 10px 50px ;
+  padding: 10px 30px ;
   margin-right: 50px;
 }
 
@@ -152,16 +255,15 @@ a.btnd--shadow {
   text-align: center;
 }
 .glass1 h1{
-  margin: 0;
   text-align: center;
   padding-top: 50px;
   font-size: 150px;
   line-height:1;
   font-weight:bold;
-  width: 80%;
+  /* width: 80%;
   margin-left: 100px;
   height: 80%;
-  margin-bottom: 50px;
+  margin-bottom: 50px; */
 }
 .glass h1{
   font-size: 80px;
@@ -184,7 +286,7 @@ a.btnd--shadow {
 
 .line_line{
   border-bottom:solid 30px maroon;
-  width: 2000px;
+  width: 100%;
 }
 .line_line2{
   border-bottom:solid 30px maroon;
@@ -352,15 +454,20 @@ li{
   margin-right: auto;
   text-align: center;
   line-height:1;
-  width: 500px;
+  width: 70%;
 }
+
+
 .how{
   margin-left: auto;
   margin-right: auto;
   line-height:1;
   text-align: left;
-  width: 500px;
+  width: 70%;
   padding-top: 100px;
+}
+.how p {
+  text-align: center;
 }
 
 /* post.show */
@@ -712,6 +819,10 @@ button.btn .keyword_root{
   width: 70%;
   font-size: 25px;
 }
+.word_edit_list p{
+    padding: 60px 0px 30px 0px;
+    font-size: 60px;
+}
 
 /* signup */
 .signup{
@@ -735,3 +846,4 @@ button.btn .keyword_root{
 .textlink a:hover{
   color: #770000;
 }
+

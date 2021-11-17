@@ -1,8 +1,10 @@
 <div class="search_post">
-
-   <div > 
-    <marquee direction="doown"><h1 class="line_line2">　　　　　　　</h1></marquee>
-  </div>
+     <div class="sp3"></div>
+    <div class= "this"> 
+        <marquee direction="doown"><h5 class="line_line2">　　　　　　　</h1></marquee>
+       </div>
+        <div class="sp3"></div>
+         <div class="sp3"></div>
     <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
         <%= form.text_field :keyword, placeholder: "　　みんなの無駄を検索みよう", class: "textpostin textpostina" ,size: "30x10" %>
         <%= form.submit "search", class: "btnda btnd--shadowa" %>
@@ -10,13 +12,14 @@
     <div class="word_edit_list">
         <% @keywords.each do |word| %>
           <%=link_to '【delete】', keyword_path(word.id),method: :delete, class:"btnda btnd--shadowa" %>
-          <%= "#{word.text} / "%>
+          <p><%= "#{word.text} / "%></p>
         <% end %>
     </div>
-  
-      <div>
-        <marquee direction="right"><h1 class="line_line">　　　　　　　</h1></marquee>
-      </div>
+   <div class="sp3"></div>
+   <div class="sp3"></div>
+       <div class= "this"> 
+        <marquee direction="right"><h5 class="line_line2">　　　　　　　</h1></marquee>
+       </div>
       <div class ="btnd btnd--shadow showfooter showfootera">
         <%=link_to 'home', root_path, class:"btnd btnd--shadow" %>
       </div>

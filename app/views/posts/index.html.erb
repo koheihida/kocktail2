@@ -91,16 +91,12 @@ window.onload = function() {
         <p>そんなことを考えている時に出会った本「考える術」(著:藤原麻里菜）を実践できるようなアプリケーションを作成作成しようと思い実装に取り組みました</p>
         <p>既にある既存の言葉と言葉で誕生したお題に効能や意味・役割を与えることを習慣できるアプリケーションです。
         「カメラ」×「携帯電話」＝「写メ」のようにかなり離れているものがか繋がることで人々の生活が、ライフスタイルが変わることもあるのです。</p>
-        <p>アプリケーションの命名は、既存のリキュールやスピリッツを様々な組み合わせで世界中の大人を魅了しているカクテルのように、既存の言葉たちを組み合わせて新しい世界観で魅了できる時が来ればいいなと思い名付けました。無駄なに感じていた言葉も意味や役割も積み重なることによってユーザーの視野が、世界が変わるような表現ができますように・・・。
+        <p>アプリケーションの命名は、既存のリキュールやスピリッツを様々な組み合わせで世界中の大人を魅了しているカクテルのように、既存の言葉たちを組み合わせて新しい世界観で魅了できる時が来ればいいなと思い名付けました。無駄なように思っていた言葉も意味や役割も、様々な人に触れて、積み重なることによって、世界が変わるような表現が・役割を持つ日がいつか来るのかもしれません・・・。
         </p>
       </div>
-
-
-      
         <div class ="sp5"></div> 
-  
   <div > 
-    <marquee direction="doown"><h1 class="line_line2">　　　　　　　</h1></marquee>
+    <marquee direction="doown"><h5 class="line_line2">　　　　　　　</h1></marquee>
   </div>
       <div class ="sp5"></div>
     <h1 class="head_test">考える術</h1>
@@ -112,73 +108,66 @@ window.onload = function() {
       data-period="2000"
       data-rotate='[ "|1|「言葉」から考える","-高速で新しいものを生み出す術","|2|半径1メートルから考える","-モヤモヤを有効活用する術","|3|ひねくれて考える","-視点をサクサク切り替える術","|4|「みんなが知っていること」から考える","-一人だけ違うことをする術","|5|「自分のこと」から考える","-心の叫びをかたちにする術","|6|「情報」から考える","-全然考えたことのないことを思いつく術","|7|「感情」から考える","-自分らしさを全開にする術"]'></span>
     </h1>
-<script>
-var TxtRotate = function(el, toRotate, period) {
-  this.toRotate = toRotate;
-  this.el = el;
-  this.loopNum = 0;
-  this.period = parseInt(period, 10) || 2000;
-  this.txt = '';
-  this.tick();
-  this.isDeleting = false;
-};
+        <script>
+        var TxtRotate = function(el, toRotate, period) {
+          this.toRotate = toRotate;
+          this.el = el;
+          this.loopNum = 0;
+          this.period = parseInt(period, 10) || 2000;
+          this.txt = '';
+          this.tick();
+          this.isDeleting = false;
+        };
 
-TxtRotate.prototype.tick = function() {
-  var i = this.loopNum % this.toRotate.length;
-  var fullTxt = this.toRotate[i];
+        TxtRotate.prototype.tick = function() {
+          var i = this.loopNum % this.toRotate.length;
+          var fullTxt = this.toRotate[i];
 
-  if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
-  } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
-  }
+          if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+          } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+          }
 
-  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+          this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
 
-  var that = this;
-  var delta = 300 - Math.random() * 100;
+          var that = this;
+          var delta = 300 - Math.random() * 100;
 
-  if (this.isDeleting) { delta /= 2; }
+          if (this.isDeleting) { delta /= 2; }
 
-  if (!this.isDeleting && this.txt === fullTxt) {
-    delta = this.period;
-    this.isDeleting = true;
-  } else if (this.isDeleting && this.txt === '') {
-    this.isDeleting = false;
-    this.loopNum++;
-    delta = 500;
-  }
+          if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+          } else if (this.isDeleting && this.txt === '') {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
+          }
 
-  setTimeout(function() {
-    that.tick();
-  }, delta);
-};
+          setTimeout(function() {
+            that.tick();
+          }, delta);
+        };
 
-window.onload = function() {
-  var elements = document.getElementsByClassName('txt-rotate');
-  for (var i=0; i<elements.length; i++) {
-    var toRotate = elements[i].getAttribute('data-rotate');
-    var period = elements[i].getAttribute('data-period');
-    if (toRotate) {
-      new TxtRotate(elements[i], JSON.parse(toRotate), period);
-    }
-  }
-  // INJECT CSS
-  var css = document.createElement("style");
-  css.type = "text/css";
-  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
-  document.body.appendChild(css);
-};
-</script>
-
-    
+        window.onload = function() {
+          var elements = document.getElementsByClassName('txt-rotate');
+          for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-rotate');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtRotate(elements[i], JSON.parse(toRotate), period);
+            }
+          }
+          // INJECT CSS
+          var css = document.createElement("style");
+          css.type = "text/css";
+          css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+          document.body.appendChild(css);
+        };
+        </script> 
   </div>
-    <div>
-        <marquee direction="right"><h1 class="line_line">　　　　　　　</h1></marquee>
-      </div>
-  
-      
-      
+ 
       <div class="how">
         <span class="about"><h4>"How to use"</h4></span>
         <p>既に登録されている単語がランダム2つ選ばれお題が決まります。</p>
@@ -206,9 +195,9 @@ window.onload = function() {
         <%= form.submit "search", class: "btnda btnd--shadowa" %>
       <% end %>
 
-       <div> 
-        <marquee direction="doown"><h1 class="line_line2">　　　　　　　</h1></marquee>
-      </div>
+       <div class= "this"> 
+        <marquee direction="right"><h5 class="line_line2">　　　　　　　</h1></marquee>
+       </div>
     <div class ="list_list">
       <div class = "list" >
         <% @posts.each do |post| %>
