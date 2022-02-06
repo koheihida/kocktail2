@@ -6,9 +6,9 @@ Kocktail(カクテル)
 # URL
 https://kocktail2.herokuapp.com/
 
-\ テスト用アカウント
-nickname:aaa \
-PW:aaa111 \
+テスト用アカウント\
+nickname:aaa\
+PW:aaa111 
 
 # 実装環境
 Ruby：2.6.5 \
