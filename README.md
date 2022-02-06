@@ -1,6 +1,25 @@
 # README
 
-現在修正中です。
+# アプリケーション名
+Kocktail(カクテル)
+
+# URL
+https://kocktail2.herokuapp.com/
+
+\ テスト用アカウント
+nickname:aaa \
+PW:aaa111 \
+
+# 実装環境
+Ruby：2.6.5 \
+Ruby on Rails：6.0.4.1
+
+# デプロイ
+Heroku
+
+# 実装期間
+2021年10月13日〜11月17日
+
 [![Image from Gyazo](https://i.gyazo.com/c7c007f1bdcc1c5a76a2c6007adda08d.png)](https://gyazo.com/c7c007f1bdcc1c5a76a2c6007adda08d)
 
 ## 作成動機
@@ -36,13 +55,6 @@
 ・考えた内容をアウトプットする
 ・アウトプットした内容はTwitterにも投稿できる
 ・藤原麻里菜さんの"考える術"を実現するためのアプリケーション
-
-## URL
-https://kocktail2.herokuapp.com/
-
-## テスト用アカウント
-nickname:aaa
-PW:aaa111
 
 ## 目指した課題解決
 ・発想力を鍛える表現力強化
@@ -94,8 +106,6 @@ PW:aaa111
 ### Association
 - has_many :post, through: :keyword_post
 - belongs_to :user
-
-
 
 ## post テーブル
 |Column              |  Type        | Options                       |
