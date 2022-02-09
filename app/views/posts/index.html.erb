@@ -1,7 +1,5 @@
-
-
 <div class="top-wrapper">
-<div class ="sp5"></div> 
+  <div class ="sp5"></div> 
   <div class= "indextop">
     <h1 class="line_line">　　　　　　　</h1>
   </div>
@@ -12,64 +10,64 @@
       data-period="2000"
       # data-rotate='[ "言葉を新たに創造せよ", "言葉の概念をひっくり返せ", "役割から考える新しい言葉", "考える術", "表現を楽しめ!!" ,"無駄づくり"]'></span> 
     </h1>
-<script>
-var TxtRotate = function(el, toRotate, period) {
-  this.toRotate = toRotate;
-  this.el = el;
-  this.loopNum = 0;
-  this.period = parseInt(period, 10) || 2000;
-  this.txt = '';
-  this.tick();
-  this.isDeleting = false;
-};
+  <script>
+    var TxtRotate = function(el, toRotate, period) {
+      this.toRotate = toRotate;
+      this.el = el;
+      this.loopNum = 0;
+      this.period = parseInt(period, 10) || 2000;
+      this.txt = '';
+      this.tick();
+      this.isDeleting = false;
+    };
 
-TxtRotate.prototype.tick = function() {
-  var i = this.loopNum % this.toRotate.length;
-  var fullTxt = this.toRotate[i];
+    TxtRotate.prototype.tick = function() {
+      var i = this.loopNum % this.toRotate.length;
+      var fullTxt = this.toRotate[i];
 
-  if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
-  } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
-  }
+      if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+      } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+      }
 
-  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+      this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
 
-  var that = this;
-  var delta = 300 - Math.random() * 100;
+      var that = this;
+      var delta = 300 - Math.random() * 100;
 
-  if (this.isDeleting) { delta /= 2; }
+      if (this.isDeleting) { delta /= 2; }
 
-  if (!this.isDeleting && this.txt === fullTxt) {
-    delta = this.period;
-    this.isDeleting = true;
-  } else if (this.isDeleting && this.txt === '') {
-    this.isDeleting = false;
-    this.loopNum++;
-    delta = 500;
-  }
+      if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+      } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+      }
 
-  setTimeout(function() {
-    that.tick();
-  }, delta);
-};
+      setTimeout(function() {
+        that.tick();
+      }, delta);
+    };
 
-window.onload = function() {
-  var elements = document.getElementsByClassName('txt-rotate');
-  for (var i=0; i<elements.length; i++) {
-    var toRotate = elements[i].getAttribute('data-rotate');
-    var period = elements[i].getAttribute('data-period');
-    if (toRotate) {
-      new TxtRotate(elements[i], JSON.parse(toRotate), period);
-    }
-  }
-  // INJECT CSS
-  var css = document.createElement("style");
-  css.type = "text/css";
-  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
-  document.body.appendChild(css);
-};
-</script>
+    window.onload = function() {
+      var elements = document.getElementsByClassName('txt-rotate');
+      for (var i=0; i<elements.length; i++) {
+        var toRotate = elements[i].getAttribute('data-rotate');
+        var period = elements[i].getAttribute('data-period');
+        if (toRotate) {
+          new TxtRotate(elements[i], JSON.parse(toRotate), period);
+        }
+      }
+      // INJECT CSS
+      var css = document.createElement("style");
+      css.type = "text/css";
+      css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+      document.body.appendChild(css);
+    };
+  </script>
   <div class ="sp5"></div> 
     
   </div>
@@ -100,56 +98,55 @@ window.onload = function() {
   <div > 
     <marquee direction="doown"><h5 class="line_line2">　　　　　　　</h1></marquee>
   </div>
-      <div class ="sp5"></div>
-    <h1 class="head_test">考える術</h1>
-  
+  <div class ="sp5"></div>
+  <h1 class="head_test">考える術</h1>
   <div class="glass2">
-        <h1>
+    <h1>
       <span
       class="txt-rotate"
       data-period="2000"
       data-rotate='[ "|1|「言葉」から考える","-高速で新しいものを生み出す術","|2|半径1メートルから考える","-モヤモヤを有効活用する術","|3|ひねくれて考える","-視点をサクサク切り替える術","|4|「みんなが知っていること」から考える","-一人だけ違うことをする術","|5|「自分のこと」から考える","-心の叫びをかたちにする術","|6|「情報」から考える","-全然考えたことのないことを思いつく術","|7|「感情」から考える","-自分らしさを全開にする術"]'></span>
     </h1>
-        <script>
-        var TxtRotate = function(el, toRotate, period) {
-          this.toRotate = toRotate;
-          this.el = el;
-          this.loopNum = 0;
-          this.period = parseInt(period, 10) || 2000;
-          this.txt = '';
-          this.tick();
+    <script>
+      var TxtRotate = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+      };
+
+      TxtRotate.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+          this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+          this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 300 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+          delta = this.period;
+          this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
           this.isDeleting = false;
-        };
+          this.loopNum++;
+          delta = 500;
+        }
 
-        TxtRotate.prototype.tick = function() {
-          var i = this.loopNum % this.toRotate.length;
-          var fullTxt = this.toRotate[i];
-
-          if (this.isDeleting) {
-            this.txt = fullTxt.substring(0, this.txt.length - 1);
-          } else {
-            this.txt = fullTxt.substring(0, this.txt.length + 1);
-          }
-
-          this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-          var that = this;
-          var delta = 300 - Math.random() * 100;
-
-          if (this.isDeleting) { delta /= 2; }
-
-          if (!this.isDeleting && this.txt === fullTxt) {
-            delta = this.period;
-            this.isDeleting = true;
-          } else if (this.isDeleting && this.txt === '') {
-            this.isDeleting = false;
-            this.loopNum++;
-            delta = 500;
-          }
-
-          setTimeout(function() {
-            that.tick();
-          }, delta);
+        setTimeout(function() {
+          that.tick();
+        }, delta);
         };
 
         window.onload = function() {
@@ -168,49 +165,50 @@ window.onload = function() {
           document.body.appendChild(css);
         };
         </script> 
-  </div>
+</div>
  
-      <div class="how">
-        <span class="about"><h4>"How to use"</h4></span>
-        <p>既に登録されている単語がランダム2つ選ばれお題が決まります。</p>
-        <p>ランダムで組み合わされた新しい"造語"の役割を考えて投稿してください</p>
-        <p>ありえないと思う発想から今使われているモノで世の中は埋もれています</p>
-        <p>ここから生まれたアイディアが誰かの人生を変えるキッカケになるかもしれません</p>
-     </div>
-      <div class="keyord_rootmain">
-          <div class="keyword_root">
-            <%= link_to( keywords_path , class: 'btnda btnd--shadowa') do %>
-                  <span class=''>言葉を登録する</span>
-            <% end %>
-          </div>
-
-          <div class="keyword_root" >
-            <%= form_with model: @post, url:posts_path, method: :post, local: true do |f| %>
-              <%= link_to(new_post_path , class: 'btnda btnd--shadowa') do %>
-                <span class=''>投稿する</span>
-              <% end %>
-            <% end %>
-          </div>
-      </div>
-      <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
-        <%= form.text_field :keyword, placeholder: "　みんなの無駄を検索してみよう", class: "textpostin textpostina" ,size: "30x10" %>
-        <%= form.submit "search", class: "btnda btnd--shadowa" %>
+  <div class="how">
+    <span class="about">
+      <h4>"How to use"</h4>
+    </span>
+      <p>既に登録されている単語がランダム2つ選ばれお題が決まります。</p>
+      <p>ランダムで組み合わされた新しい"造語"の役割を考えて投稿してください</p>
+      <p>ありえないと思う発想から今使われているモノで世の中は埋もれています</p>
+      <p>ここから生まれたアイディアが誰かの人生を変えるキッカケになるかもしれません</p>
+  </div>
+  <div class="keyord_rootmain">
+    <div class="keyword_root">
+      <%= link_to( keywords_path , class: 'btnda btnd--shadowa') do %>
+        <span class=''>言葉を登録する</span>
       <% end %>
+  </div>
 
-       <div class= "this"> 
-        <marquee direction="right"><h5 class="line_line2">　　　　　　　</h1></marquee>
-       </div>
-    <div class ="list_list">
-      <div class = "list" >
-        <% @posts.each do |post| %>
-          <li>
-            <ul><%= link_to "● #{post.text}", post_path(post), class: "listul" %></ul>
-          </li>
-        <% end %>
-        <div class = "page">
-          <%= paginate @posts %>
-        </div>  
-      </div> 
-    </div>   
+  <div class="keyword_root" >
+    <%= form_with model: @post, url:posts_path, method: :post, local: true do |f| %>
+      <%= link_to(new_post_path , class: 'btnda btnd--shadowa') do %>
+        <span class=''>投稿する</span>
+      <% end %>
+    <% end %>
+  </div>
+  <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
+    <%= form.text_field :keyword, placeholder: "　みんなの無駄を検索してみよう", class: "textpostin textpostina" ,size: "30x10" %>
+    <%= form.submit "search", class: "btnda btnd--shadowa" %>
+  <% end %>
+
+  <div class= "this"> 
+    <marquee direction="right"><h5 class="line_line2">　　　　　　　</h1></marquee>
+  </div>
+  <div class ="list_list">
+    <div class = "list" >
+      <% @posts.each do |post| %>
+        <li>
+          <ul><%= link_to "● #{post.text}", post_path(post), class: "listul" %></ul>
+        </li>
+      <% end %>
+      <div class = "page">
+        <%= paginate @posts %>
+      </div>  
+    </div> 
+  </div>   
 
     
