@@ -1,23 +1,18 @@
 <div class= "word_edit">
-  
   <div class="sp4">
-          <marquee direction="doown"><h1 class="line_line">　　　　　　　</h1></marquee>
+    <marquee direction="doown"><h1 class="line_line">　　　　　　　</h1></marquee>
   </div>
-
-    <%= form_with(url: search_keywords_path(@keywords.ids), local: true, method: :get, class: "search-form") do |form| %>
-        <%= form.text_field :keyword, placeholder: "　　言葉の検索", class: "textpostin textpostina" ,size: "30x10" %>
-        <%= form.submit "search", class: "btnda btnd--shadowa" %>
-    <% end %>
-
+  <%= form_with(url: search_keywords_path(@keywords.ids), local: true, method: :get, class: "search-form") do |form| %>
+    <%= form.text_field :keyword, placeholder: "　　言葉の検索", class: "textpostin textpostina" ,size: "30x10" %>
+    <%= form.submit "search", class: "btnda btnd--shadowa" %>
+  <% end %>
   <div class="word_edit_list">
     <% @keywords.each do |word| %>
-       <%# <%=link_to '【delete】', keyword_path(word.id),method: :delete, class:"btnda btnd--shadowa" %> 
       <%= "#{word.text} / "%>
     <% end %>
   </div>
-
   <div class="sp4">
-          <marquee direction="right"><h1 class="line_line">　　　　　　　</h1></marquee>
+    <marquee direction="right"><h1 class="line_line">　　　　　　　</h1></marquee>
   </div>
     <%=link_to 'home', root_path, class:"btnda btnd--shadowa" %> 
 </div>
