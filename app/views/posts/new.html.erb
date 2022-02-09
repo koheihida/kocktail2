@@ -1,25 +1,21 @@
 <div class="new_post">
-    <%# 投稿機能 %>
-    
-      <div class="sp4"></div>
-      <div class= "this"> 
-        <marquee direction="right"><h5 class="line_line2">　　　　　　　</h1></marquee>
-       </div>
-    <div class="post_tweet">
-        <div class="yourorder">
-              <h3>New word is ・・・</h3>
-          <% @random.each do |book| %>
-            <span class="yourorderlist"><%= book.text %></span>
-          <% end %>  
-          <% titles %>
-        </div>
-       <div class="keyword_root"> 
-        <%=link_to 'word change', new_post_path , class:"btnd btnd--shadow" %>
-       </div>  
-      
+  <%# 投稿機能 %>
+  <div class="sp4"></div>
+  <div class= "this"> 
+    <marquee direction="right"><h5 class="line_line2">　　　　　　　</h1></marquee>
+  </div>
+  <div class="post_tweet">
+    <div class="yourorder">
+      <h3>New word is ・・・</h3>
+      <% @random.each do |book| %>
+        <span class="yourorderlist"><%= book.text %></span>
+      <% end %>  
+        <% titles %>
+    </div>
+    <div class="keyword_root"> 
+      <%=link_to 'word change', new_post_path , class:"btnd btnd--shadow" %>
+    </div>  
     <marquee direction="doown"><h1 class="line_line2">　　　　　　　</h1></marquee>
-    
-
     <div class="count_time">
       <div class="timemain">
         <div class ="buttons keyword_root ">
@@ -32,75 +28,74 @@
           <div class="sp2">
             <button id ="resetbutton" class="btnd btnd--shadow">reset</button>
           </div> 
-      </div>    
-        </div>
-          <div class ="timerbody">
-            <div class = "timer">
-              <h3>Time to think</h3>
-              <div id ="timer" class= "timer">
-            </div>
-          </div>  
+        </div>    
+    </div>
+    <div class ="timerbody">
+      <div class = "timer">
+        <h3>Time to think</h3>
+          <div id ="timer" class= "timer"></div>
+      </div>  
     </div>
 
     <script>
-          var start_flag = false;
-          var intervalid;
-          var to_timeup = 300;
-          var backstart = 300;
+      var start_flag = false;
+      var intervalid;
+      var to_timeup = 300;
+      var backstart = 300;
 
-              function count_start() {
-                if (start_flag===false) {
-                  intervalid = setInterval(count_down, 1000);
-                      start_flag = true;
-                  }
-              }
+      function count_start() {
+        if (start_flag===false) {
+          intervalid = setInterval(count_down, 1000);
+          start_flag = true;
+          }
+        }
 
-              function count_down() {
-                var timer = document.getElementById("timer");
-                  if (to_timeup===0) {
-                    $('#timer').html('Time up!');  
-                      $('#timer').addClass('red');
-                    count_stop();
-                  } else {
-                    to_timeup--;
-                      padding();
-                  }
-              }
+        function count_down() {
+          var timer = document.getElementById("timer");
+          if (to_timeup===0) {
+            $('#timer').html('Time up!');  
+            $('#timer').addClass('red');
+            count_stop();
+          } else {
+            to_timeup--;
+            padding();
+          }
+        }
 
-              function count_stop() {
-                clearInterval(intervalid);
-                  start_flag = false;
-              }
+        function count_stop() {
+          clearInterval(intervalid);
+          start_flag = false;
+        }
 
-              function count_reset() {
-                var timer = document.getElementById("timer");
-                  to_timeup = backstart;
-                  padding();
-                  // timer.style.color="black"; 
-                  $('#timer').css('color','black');
-                  clearInterval(intervalid);
-                  start_flag = false;
-              }
+        function count_reset() {
+          var timer = document.getElementById("timer");
+            to_timeup = backstart;
+            padding();
+            // timer.style.color="black"; 
+            $('#timer').css('color','black');
+            clearInterval(intervalid);
+            start_flag = false;
+        }
 
-              function padding() {
-                var min = 0;
-                  var sec = 0;
-                  var timer = document.getElementById("timer");
-                  min = Math.floor(to_timeup/60);
-                  sec = (to_timeup%60);
-                  min = ('0'+min).slice(-2);
-                  sec = ('0'+sec).slice(-2);
-                  timer.innerHTML = min+':'+sec;
-              }
+        function padding() {
+          var min = 0;
+          var sec = 0;
+          var timer = document.getElementById("timer");
+              min = Math.floor(to_timeup/60);
+              sec = (to_timeup%60);
+              min = ('0'+min).slice(-2);
+              sec = ('0'+sec).slice(-2);
+              timer.innerHTML = min+':'+sec;
+        }
 
-              $(function () {
-                padding();
-                  $("#startbutton").click(count_start);
-                  $("#stopbutton").click(count_stop);
-                  $("#resetbutton").click(count_reset);
-              })
+        $(function () {
+          padding();
+          $("#startbutton").click(count_start);
+          $("#stopbutton").click(count_stop);
+          $("#resetbutton").click(count_reset);
+        })
     </script>
-                <script type=”text/JavaScript” src=”js/main.js”></script>
+    <script type=”text/JavaScript” src=”js/main.js”></script>
   </div>
 
   <%= form_with model: @post, url:posts_path, method: :post, local: true do |f| %>
@@ -110,8 +105,7 @@
         <h5>困った時は下記の</h5>
         <h5>装飾語を付けて</h5> 
         <h5>考えてみよう</h5>
-        <div class="sp3">
-        </div>
+        <div class="sp3"></div>
         <div class="btnd btnd--shadow">
           <%= f.submit "投稿する" ,class:"btnd btnd--shadow" %>
           <%=link_to 'home', root_path, class:"btnd btnd--shadow" %> 
@@ -125,68 +119,67 @@
   <div class= "this"> 
     <marquee direction="right"><h5 class="line_line2">　　　　　　　</h1></marquee>
   </div>   
- <h1>装飾語</h1>
- <h1>
-  <span
-     class="txt-rotate"
-     data-period="2000"
-     data-rotate='[ "華麗な", "夢のような", "恐ろしく", "追いかけてくる", "笑えない" ,"まるで","嘘みたいな","とてつもなく","信じられない","生まれたてのような"]'></span>
-</h1>
+  <h1>装飾語</h1>
+  <h1>
+    <span
+      class="txt-rotate"
+      data-period="2000"
+      data-rotate='[ "華麗な", "夢のような", "恐ろしく", "追いかけてくる", "笑えない" ,"まるで","嘘みたいな","とてつもなく","信じられない","生まれたてのような"]'></span>
+  </h1>
 <script>
-var TxtRotate = function(el, toRotate, period) {
-  this.toRotate = toRotate;
-  this.el = el;
-  this.loopNum = 0;
-  this.period = parseInt(period, 10) || 2000;
-  this.txt = '';
-  this.tick();
-  this.isDeleting = false;
-};
-
-TxtRotate.prototype.tick = function() {
-  var i = this.loopNum % this.toRotate.length;
-  var fullTxt = this.toRotate[i];
-
-  if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
-  } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
-  }
-
-  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-  var that = this;
-  var delta = 300 - Math.random() * 100;
-
-  if (this.isDeleting) { delta /= 2; }
-
-  if (!this.isDeleting && this.txt === fullTxt) {
-    delta = this.period;
-    this.isDeleting = true;
-  } else if (this.isDeleting && this.txt === '') {
+  var TxtRotate = function(el, toRotate, period) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.period = parseInt(period, 10) || 2000;
+    this.txt = '';
+    this.tick();
     this.isDeleting = false;
-    this.loopNum++;
-    delta = 500;
-  }
+  };
 
-  setTimeout(function() {
-    that.tick();
-  }, delta);
-};
+  TxtRotate.prototype.tick = function() {
+    var i = this.loopNum % this.toRotate.length;
+    var fullTxt = this.toRotate[i];
 
-window.onload = function() {
-  var elements = document.getElementsByClassName('txt-rotate');
-  for (var i=0; i<elements.length; i++) {
-    var toRotate = elements[i].getAttribute('data-rotate');
-    var period = elements[i].getAttribute('data-period');
-    if (toRotate) {
-      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    if (this.isDeleting) {
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
     }
-  }
-  // INJECT CSS
-  var css = document.createElement("style");
-  css.type = "text/css";
-  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
-  document.body.appendChild(css);
-};
+
+    this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+    var that = this;
+    var delta = 300 - Math.random() * 100;
+
+    if (this.isDeleting) { delta /= 2; }
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+      delta = this.period;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+      this.isDeleting = false;
+      this.loopNum++;
+      delta = 500;
+    }
+
+    setTimeout(function() {
+      that.tick();
+    }, delta);
+  };
+
+  window.onload = function() {
+    var elements = document.getElementsByClassName('txt-rotate');
+    for (var i=0; i<elements.length; i++) {
+      var toRotate = elements[i].getAttribute('data-rotate');
+      var period = elements[i].getAttribute('data-period');
+      if (toRotate) {
+        new TxtRotate(elements[i], JSON.parse(toRotate), period);
+      }
+    }
+    // INJECT CSS
+    var css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+    document.body.appendChild(css);
+  };
 </script>
