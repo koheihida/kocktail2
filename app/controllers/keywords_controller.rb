@@ -22,14 +22,6 @@ class KeywordsController < ApplicationController
 
     def show
       @keywords = Keyword.all
-      # @keyword = @keywords.find_by(params[:id])
-      # @keyword = []
-      # @keywords.each do |document|
-      #   keyword_id = Keyword.where(params[:id])
-      #   @keyword << keyword_id
-      # end
-      # @keywords =  Keyword.all.ids
-      # @keyword = @keywords.ids.find(params[:id])
     end
 
     def destroy
