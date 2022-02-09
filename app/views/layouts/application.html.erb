@@ -9,7 +9,6 @@
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/ress/dist/ress.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
-    <%# <link rel="stylesheet" href="stylesheet.css"> %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -19,8 +18,7 @@
     <header>
       <div class="container">
         
-          <% if user_signed_in? %> <!-- ユーザーがログインしているか調べる -->
-                  <!-- ユーザーがログインしていた時の処理 -->
+          <% if user_signed_in? %> 
             <div class="header-left">
               <div class = "user_name">
                 <h4> name:<%= current_user.nickname %> </h4> 
@@ -32,9 +30,8 @@
               </div>
             </div>   
           <% else %>
-                  <!-- ユーザーがログインしていなかった時の処理 -->
             <div class="header-left">
-              <h2> - </h2>
+              <h2>  </h2>
             </div>  
             <div class = "header-right">
               <%= link_to "Login", new_user_session_path, class: 'post' %> 
@@ -42,10 +39,7 @@
             </div>  
           <% end %>
       </div>
-    
     </header>
-  
-    <%= yield %>
-    
+    <%= yield %> 
   </body>
 </html>
